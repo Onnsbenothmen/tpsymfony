@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1> nom:  {{ article.nom }}</h1>
+<p> description :{{ article.description }}</p>
+<p> ville :{{ article.ville }}</p>
+<p> image :{{ article.image }}</p>
+<hr>
+<a href="{{path('allTâches')}}">Retour</a>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title%} Liste des tâches{% endblock %}
+{% block body %}
+
+
+{{ form_start(form) }}
+<div class="form-row align-items-end" >
+<div class="col">
+{{ form_row(form.nom) }}
+</div>
+<div class="col">
+<div class="form-group">
+<button type="submit" class="btn btn-success">Rechercher</button>
+</div>
+</div>
+</div>
+{{ form_end(form) }}
+
+{% if articles %}
+<table id="tâches" class="table table-striped">
+<thead>
+<tr>
+<th>Nom</th>
+<th>Prix</th>
+<th>statu</th>
+<th>image</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{% for article in articles %}
+<tr>
+<td>{{ article.nom }}</td>
+<td>{{ article.description }}</td>
+<td>{{ article.statu }}</td>
+<td>{{ article.image }}</td>
+
+
+<td>
+<a href="/product/{{ tâche.id }}" class="btn btn-dark">Détails</a>
+
+</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p>Aucun tâche</p>
+{% endif %}
+{% endblock %}
